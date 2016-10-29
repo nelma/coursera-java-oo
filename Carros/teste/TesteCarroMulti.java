@@ -1,16 +1,16 @@
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
 
 
-public class TesteCarro {
-	
-	Carro c; 
+public class TesteCarroMulti {
+
+CarroDeCorrida c; 
 	
 	@Before
 	public void inicializaCarro() {
-		c = new Carro("teste", 10, 100);
+		c = new CarroMulti("teste", 1.5, 100);
 	}
 	
 	
@@ -20,9 +20,16 @@ public class TesteCarro {
 	}
 
 	@Test
-	public void testAcelerar() {
+	public void testAcelerarUmaVez() {
 		c.acelerar();
 		assertEquals(10, c.getVelocidade());
+	}
+	
+	@Test
+	public void testAcelerarDuasVezes() {
+		c.acelerar();
+		c.acelerar();
+		assertEquals(15, c.getVelocidade());
 	}
 
 	@Test
@@ -49,5 +56,4 @@ public class TesteCarro {
 			c.acelerar();
 		assertEquals(100, c.getVelocidade());
 	}
-	
 }
