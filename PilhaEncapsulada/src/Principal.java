@@ -11,14 +11,19 @@ public class Principal {
 		System.out.println(p.topo());
 		System.out.println(p.tamanho());
 		
-		//p.setTopo(6);
+
+		Object[] arrayElementos = p.getElementos();
+		System.out.println(arrayElementos.length);
+		arrayElementos[2] = "Outro";
 		
 		//desempilhando
 		System.out.println("----------------");
-		System.out.println(p.desempilhar().toString().toUpperCase());
-		System.out.println(p.topo().toString().toUpperCase());
+		System.out.println(p.desempilhar());
+		System.out.println(p.topo());
 		System.out.println(p.tamanho());
 		
+		
+		System.out.println(p.getElementos().length);
 	}
 
 }
